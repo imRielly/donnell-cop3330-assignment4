@@ -1,0 +1,65 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class app {
+    main()
+    start()
+}
+
+class AppController {
+    model: AppModel
+
+    TableView
+    ListView
+
+    btnSaveClicked()
+    btnLoadClicked()
+    btnCreateListClicked()
+    btnDeleteListClicked()
+    btnToDoItemClicked()
+    btnMarkCompleteClicked()
+    btnNewItemClicked()
+    listTitleClicked()
+    btnSaveListClicked()
+}
+
+class AppModel {
+    ToDoList: Collection
+
+    loadAll()
+    loadList()
+    saveAll()
+    saveFile()
+    addList()
+    removeList()
+}
+
+class ToDoList {
+    title: String
+    toDoItems: Collection
+
+    setTitle()
+    setToDoItems()
+
+    getTitle()
+    getToDoItems()
+
+    addItem()
+    removeItem()
+}
+
+class ToDoItem {
+    desc: String
+    dueDate: String
+    complete: boolean
+    setDesc()
+    setDueDate()
+    setComplete()
+}
+
+app -- AppController
+AppController -- AppModel
+AppModel -- ToDoList
+ToDoList -- ToDoItem
+
+@enduml
