@@ -1,10 +1,19 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 4 Solution
+ *  Copyright 2021 Rielly Donnell
+ */
+
 package ucf.assignments;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class AppModel {
-Collection<ToDoList> toDoList = new ArrayList<>();
+    Collection<ToDoList> toDoList = new ArrayList<>();
+
+    public Collection<ToDoList> getToDoList() {
+        return toDoList;
+    }
 
 public void loadAll() {
     //New File savedLists ("/SavedLists/")
@@ -35,8 +44,9 @@ public void saveAll() {
 
 }
 
-public void saveList(ToDoList toSave) {
-    //String fileName = "/SavedLists/" + title from toSave + ".csv"
+public void saveList(String toSave) {
+    //New ToDoList = toDoList -> getTitle -> contains toSave
+    //String fileName = "/SavedLists/" + toSave + ".csv"
     //New FileWriter as file using fileName as parameter
     //For each ToDoItem in toSave toDoItems
     //  Append to file getDesc, ",", getDueDate, ",", getCompleted, & "\n"
@@ -61,7 +71,34 @@ public void removeList(String title){
     //New ToDoList compare = next i
     //If compare title = param title
     //  remove i
+    //  break
 
+}
+
+public void removeToDoItem(String title, String desc){
+    //New Iterator<ToDoList> i of toDoList
+    //Loop while i has values
+    //New ToDoList compare = next i
+    //If compare title = param title
+    //  New Iterator<ToDoItems> items of toDoList.getToDoItems
+    //  Loop while items has values
+    //  New ToDoItem compareItem = next items
+    //  If compareItem desc = param desc
+    //      remove items
+    //      break
+}
+
+public void markItemCompleted(String title, String desc){
+    //New Iterator<ToDoList> i of toDoList
+    //Loop while i has values
+    //New ToDoList compare = next i
+    //If compare title = param title
+    //  New Iterator<ToDoItems> items of toDoList.getToDoItems
+    //  Loop while items has values
+    //  New ToDoItem compareItem = next items
+    //  If compareItem desc = param desc
+    //      setCompleted(true)
+    //      break
 }
 
 }

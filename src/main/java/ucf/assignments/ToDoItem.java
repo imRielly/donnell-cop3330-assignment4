@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 4 Solution
+ *  Copyright 2021 Rielly Donnell
+ */
+
 package ucf.assignments;
 
 import java.time.LocalDate;
@@ -24,7 +29,7 @@ public class ToDoItem {
         this.dueDate = dueDate;
     }
 
-    public boolean isComplete() {
+    public boolean getComplete() {
         return complete;
     }
 
